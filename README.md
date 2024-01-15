@@ -1,4 +1,6 @@
-# make_your_burger
+# Projeto Hamburgueria - Make Your Burger
+
+Projeto realizado durante o curso de Vue 3 - Hora de Codar
 
 ## Project setup
 ```
