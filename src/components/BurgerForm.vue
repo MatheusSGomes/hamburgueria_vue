@@ -11,7 +11,9 @@
         <label for="pao">Escolha o pão:</label>
         <select name="pao" id="pao" v-model="pao">
           <option value="">Selecione o seu pão</option>
-          <option value="integral">Integral</option>
+          <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">
+            {{ pao.tipo }}
+          </option>
         </select>
       </div>
 
@@ -19,23 +21,17 @@
         <label for="carne">Escolha a carne:</label>
         <select name="carne" id="carne" v-model="carne">
           <option value="">Selecione o tipo de carne</option>
-          <option value="maminha">Maminha</option>
+          <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">
+            {{ carne.tipo }}
+          </option>
         </select>
       </div>
 
       <div id="opcionais-container" class="input-container">
         <label id="opcionais-title" for="opcionais">Escolha a opcionais:</label>
-        <div class="checkbox-container">
-          <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" value="salame" />
-          <span>Salame</span>
-        </div>
-        <div class="checkbox-container">
-          <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" value="salame" />
-          <span>Salame</span>
-        </div>
-        <div class="checkbox-container">
-          <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" value="salame" />
-          <span>Salame</span>
+        <div v-for="opcional in opcionaisData" :key="opcional.id" class="checkbox-container">
+          <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" :value="opcional.tipo" />
+          <span>{{ opcional.tipo }}</span>
         </div>
       </div>
 
@@ -69,7 +65,7 @@ export default {
 
       this.paes = data.paes;
       this.carnes = data.carnes;
-      this.opcionais = data.opcionais;
+      this.opcionaisData = data.opcionais;
     }
   },
   mounted() {
