@@ -51,9 +51,29 @@ export default {
   name: 'BurgerForm',
   data() {
     return {
-      nome: '',
-      pao: '',
+      paes: null,
+      carnes: null,
+      opcionaisData: null,
+      nome: null,
+      pao: null,
+      carnes: null,
+      opcionais: null,
+      status: 'Solicitado',
+      msg: null,
     }
+  },
+  methods: {
+    async getIngredientes() {
+      const req = await fetch('http://localhost:3000/ingredientes');
+      const data = await req.json();
+
+      this.paes = data.paes;
+      this.carnes = data.carnes;
+      this.opcionais = data.opcionais;
+    }
+  },
+  mounted() {
+    this.getIngredientes();
   }
 }
 </script>
