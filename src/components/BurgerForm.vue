@@ -1,7 +1,7 @@
 <template>
   <Message :msg="msg" v-show="msg" />
   <div>
-    <form id="burguer-form" @submit="createBurger">
+    <form id="burger-form" @submit="createBurger">
       <div class="input-container">
         <label for="nome">Nome do cliente</label>
         <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome: " />
@@ -36,7 +36,7 @@
       </div>
 
       <div class="input-container">
-        <input type="submit" class="submit-btn" value="Criar meu Burguer!">
+        <input type="submit" class="submit-btn" value="Criar meu Burger!">
       </div>
     </form>
   </div>
@@ -108,7 +108,7 @@ export default {
 </script>
 
 <style scoped>
-  #burguer-form {
+  #burger-form {
     max-width: 400px;
     margin: 0 auto;
   }
