@@ -110,6 +110,19 @@
       ],
       "status": "Solicitado",
       "id": 3
+    },
+    {
+      "nome": "Fernando",
+      "carne": "Alcatra",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Cheddar",
+        "Cebola roxa",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 4
     }
   ]
 }
