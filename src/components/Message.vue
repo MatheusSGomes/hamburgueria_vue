@@ -1,5 +1,5 @@
 <template>
-  <div class="message-container">
+  <div v-show="msg" class="message-container">
     <p>{{ msg }}</p>
   </div>
 </template>
